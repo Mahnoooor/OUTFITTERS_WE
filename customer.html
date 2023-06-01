@@ -10,47 +10,116 @@
   <body>
     <div class="login-page" action="#!">
       <div class="form">
-        <form class="login-form" action="/loginDetails" method="POST">
+        <form class="login-form"  >
           <h4 class="loginTitle">Customer Details</h4>
           <input
-            id="id"
-            type="text"
-            placeholder="Id"
-            name="customerId"
-            reqiured
-          />
-          <input
-            id="password"
-            type="text"
-            placeholder="password"
-            name="customerPassword"
-            reqiured
-          />
-          <input
-            id="name"
-            type="text"
-            placeholder="Name"
-            name="customerName"
-            reqiured
-          />
-          <input
-            id="number"
-            type="integer"
-            placeholder="Number"
-            name="customerNumber"
-            reqiured
-          />
-          <input
-            id="address"
-            type="text"
-            placeholder="Address"
-            name="customerAddress"
-            reqiured
-          />
+  type="text"
+  placeholder="Name"
+  id="nameInput"
+  required
+/>
+<span id="nameError" class="error-message"></span>
+
+<input
+  type="email"
+  placeholder="Email"
+  id="emailInput"
+  required
+/>
+<span id="emailError" class="error-message"></span>
+
+<input
+  type="password"
+  placeholder="Password"
+  id="passwordInput"
+  required
+/>
+<span id="passwordError" class="error-message"></span>
+
+<input
+  type="number"
+  placeholder="Number"
+  id="numberInput"
+  required
+/>
+<span id="numberError" class="error-message"></span>
+
+<input
+  type="text"
+  placeholder="Address"
+  id="addressInput"
+  required
+/>
+<span id="addressError" class="error-message"></span>
+
+<script>
+  function validateForm() {
+    var name = document.getElementById("nameInput").value;
+    var nameError = document.getElementById("nameError");
+
+    var email = document.getElementById("emailInput").value;
+    var emailError = document.getElementById("emailError");
+
+    var password = document.getElementById("passwordInput").value;
+    var passwordError = document.getElementById("passwordError");
+
+    var number = document.getElementById("numberInput").value;
+    var numberError = document.getElementById("numberError");
+
+    var address = document.getElementById("addressInput").value;
+    var addressError = document.getElementById("addressError");
+
+    // Validate Name (non-empty)
+    if (name.trim() === "") {
+      nameError.textContent = "Please enter your name.";
+      return false;
+    } else {
+      nameError.textContent = "";
+    }
+
+    // Validate Email (valid email format)
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.match(emailRegex)) {
+      emailError.textContent = "Please enter a valid email address.";
+      return false;
+    } else {
+      emailError.textContent = "";
+    }
+
+    // Validate Password (minimum 6 characters)
+    if (password.length < 6) {
+      passwordError.textContent = "Password should be at least 6 characters long.";
+      return false;
+    } else {
+      passwordError.textContent = "";
+    }
+
+    // Validate Number (11-digit phone number)
+    var phoneNumberRegex = /^\d{11}$/;
+    if (!phoneNumberRegex.test(number)) {
+      numberError.textContent = "Please enter a valid 11-digit phone number.";
+      return false;
+    } else {
+      numberError.textContent = "";
+    }
+
+    // Validate Address (non-empty)
+    if (address.trim() === "") {
+      addressError.textContent = "Please enter your address.";
+      return false;
+    } else {
+      addressError.textContent = "";
+    }
+
+    // If all validations pass, the form is valid
+    return true;
+  }
+</script>
+
           <button
             class="loginButton"
             type="submit"
-            onClick="this.classList.add('processing')"
+            onClick="return validateForm()"
           >
             <span class="loginName">Submit</span>
             <svg

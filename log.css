@@ -10,12 +10,13 @@ body {
   align-items: center;
 }
 .login-page {
-  background: -webkit-linear-gradient(left, #b37ac2 0%, #9874b9 100%);
-  background: -o-linear-gradient(left, #897094 0%, #b78ec4 100%);
-  background: linear-gradient(to right, #bb9fc4 0%, #b891ce 100%);
+  background: -webkit-linear-gradient(left, #000000 0%, #d3d3d3 100%);
+  background: -o-linear-gradient(left, #000000 0%, #d3d3d3 100%);
+  background: linear-gradient(to right, #000000 0%, #d3d3d3 100%);
   position: relative;
   height: 100vh;
 }
+
 
 .login-page:before,
 .login-page:after {
@@ -60,7 +61,7 @@ body {
   position: relative;
   z-index: 1;
   /* background: #FFFFFF; */
-  background: #4b4350;
+  background: #3d3636ab;
   max-width: 330px;
   margin: 20px auto;
   padding: 50px 45px;
@@ -86,15 +87,17 @@ body {
   transition: 0.3s;
 }
 .form input:focus {
-  background: rgba(187, 54, 204, 0.11);
+  background: rgba(216, 206, 216, 0.11);
   color: #212121;
   font-weight: bold;
+  border: 0.5px solid #000000;
+  
 }
 .loginButton {
   font-family: "Quicksand";
   text-transform: uppercase;
   outline: 0;
-  background: #22042e;
+  background: #1d1a1f;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -138,7 +141,7 @@ body {
 .form button:hover,
 .form button:active,
 .form button:focus {
-  background: #270f2e;
+  background: #342e36;
 }
 .form .message {
   margin: 15px 0 0;

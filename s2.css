@@ -5,90 +5,51 @@
 } */
 /*betterTo understand boxes*/
 
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
 .bgimg {
-  background-image: url("bgimg.png");
+  background-image: url('path/to/your/background-image.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  height: 660px;
-
-  /* <img
-     src="images\download.png"
-     alt="Check URL"
-     width="100px"
-     height="100px"
-   /> */
+  height: 100vh;
 }
+
 .headerset {
-  padding-top: 200px;
-}
-.headerset h1 {
-  font-weight: bold;
-}
-.nav-link {
-  list-style: none;
-  display: inline-block;
-  margin-bottom: 15px;
-
-  position: relative;
+  color: #fff;
 }
 
-.nav-link::after {
-  content: "";
-  width: 0%;
-  height: 1px;
-  background: #f1f3f3;
-  position: absolute;
-  left: 0px;
-  bottom: -8px;
-  transition: 0.5s;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
 .services {
-  padding: 100px 0px 60px;
-
-  background-color: azure;
-
-  height: 700px;
-}
-.services h1 {
-  font-weight: bold;
-}
-.iconset {
-  color: cadetblue;
-}
-.r1-set p {
-  color: dimgrey;
-}
-.portfolio {
-  background-color: aliceblue;
-  height: 1300px;
-}
-.card {
-  margin-top: 40px;
+  background-color: #000;
+  color: #fff;
 }
 
-.img2 {
-  width: 100%;
-  height: 19vw;
-  object-fit: cover;
+.icon-img {
+  color: #fff;
 }
-.ourteam {
-  height: 900px;
+
+#intro {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 0;
 }
-.r2 p {
-  color: darkgreen;
+
+#intro .display-1 {
+  color: #fff;
 }
-.r2 h4 {
-  font-weight: bold;
-  color: darkgreen;
-}
-.imm {
-  width: 100%;
-  height: 19vw;
-  object-fit: cover;
+
+#intro .display-5 {
+  color: #ccc;
 }
 .ourteam {
   padding-top: 50px;
@@ -97,7 +58,7 @@
   font-family: "Quicksand";
 }
 h4 {
-  color: rgb(5, 5, 5);
+  color: #fff;
   font-weight: bold;
 }
 .icon-img {

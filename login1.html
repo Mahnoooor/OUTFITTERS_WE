@@ -10,33 +10,66 @@
   <body>
     <div class="login-page" action="#!">
       <div class="form">
-        <form class="login-form" action="/login" method="POST">
+        <form class="login-form">
           <h2 class="loginTitle">Login</h2>
           <!-- <input id="email" type="email" placeholder="Email" reqiured /> -->
+        
           <input
-            id="id"
-            type="text"
-            placeholder="Id"
-            name="customerId"
-            reqiured
-          />
-          <!-- <input
-            id="password"
-            type="Password"
-            placeholder="Password"
-            reqiured
-          /> -->
-          <input
-            id="password"
-            type="text"
-            placeholder="password"
-            name="customerPassword"
-            reqiured
-          />
+          type="email"
+          placeholder="Email"
+          id="emailInput"
+          required
+        />
+        <span id="emailError" class="error-message"></span>
+        
+        <input
+          type="password"
+          placeholder="Password"
+          id="passwordInput"
+          required
+        />
+        <span id="passwordError" class="error-message"></span>
+
+        <script>
+          function validateForm() {
+        
+        
+            var email = document.getElementById("emailInput").value;
+            var emailError = document.getElementById("emailError");
+        
+            var password = document.getElementById("passwordInput").value;
+            var passwordError = document.getElementById("passwordError");
+    
+           
+        
+            // Validate Email (valid email format)
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+              emailError.textContent = "Please enter a valid email address.";
+              return false;
+            } else {
+              emailError.textContent = "";
+            }
+        
+            // Validate Password (minimum 6 characters)
+            if (password.length < 6) {
+              passwordError.textContent = "Password should be at least 6 characters long.";
+              return false;
+            } else {
+              passwordError.textContent = "";
+            }
+        
+          
+        
+            // If all validations pass, the form is valid
+            return true;
+          }
+        </script>
+
           <button
             class="loginButton"
             type="submit"
-            onClick="this.classList.add('processing')"
+            onClick="return validateForm()"
           >
             <span class="loginName">login</span>
             <svg
